@@ -4,7 +4,7 @@ import { styles } from './styles';
 const ProductsDetail = () => {
   return (
     <View style={styles.container}>
-      <Text>Detalles</Text>
+      <Text style={styles.title}>Detalles</Text>
     </View>
   );
 };

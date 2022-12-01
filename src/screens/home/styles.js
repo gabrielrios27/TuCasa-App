@@ -9,4 +9,10 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: COLORS.backgroundLight,
   },
+  title: {
+    fontFamily: 'SourceSansPro-Black',
+  },
+  btn: {
+    marginVertical: 10,
+  },
 });
