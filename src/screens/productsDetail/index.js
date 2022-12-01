@@ -1,12 +1,12 @@
 import { View, Text } from 'react-native';
 import { styles } from './styles';
 
-const FloorCategories = () => {
+const ProductsDetail = () => {
   return (
     <View style={styles.container}>
-      <Text>Pisos</Text>
+      <Text>Detalles</Text>
     </View>
   );
 };
 
-export default FloorCategories;
+export default ProductsDetail;

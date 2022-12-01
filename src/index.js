@@ -1,9 +1,10 @@
-import { StyleSheet, Text, View } from 'react-native';
-
+import { useFonts } from 'expo-font';
+import { StyleSheet, ActivityIndicator, View } from 'react-native';
+import { FloorCategories, WallCoveringCategories, Home, ProductsDetail } from './screens';
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Tu Casa App!</Text>
+      <ProductsDetail />
     </View>
   );
 }
