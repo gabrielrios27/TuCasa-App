@@ -1,7 +1,7 @@
-import { useFonts } from 'expo-font';
-import { StyleSheet, ActivityIndicator, View } from 'react-native';
-import { FloorCategories, WallCoveringCategories, Home, ProductsDetail } from './screens';
+import { ActivityIndicator, StyleSheet, View } from 'react-native';
+
 import AppNavigator from './navigation';
+import { useFonts } from 'expo-font';
 
 export default function App() {
   const [loaded] = useFonts({

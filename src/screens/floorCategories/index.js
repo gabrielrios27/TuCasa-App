@@ -1,15 +1,19 @@
-import { View, Text, Button } from 'react-native';
-import { styles } from './styles';
-import { COLORS } from '../../constants/themes/colors';
+import { FlatList, SafeAreaView } from 'react-native';
 
-const FloorCategories = ({ navigation }) => {
+import { COLORS } from '../../constants/themes/colors';
+import { CategoryItem } from '../../components';
+import { FLOORSCATEGORIES } from '../../constants/data/index';
+import { styles } from './styles';
+
+const FloorCategories = ({ navigation, route }) => {
+  const onSelected = (item) => {
+    navigation.navigate('Products', { categoryId: item.id, title: item.title, color: item.color });
+  };
+  const renderItem = ({ item }) => <CategoryItem item={item} onSelected={onSelected} />;
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Pisos</Text>
-      <View style={styles.btn}>
-        <Button title="Ver Detalles" onPress={() => navigation.navigate('Detalles')} color={COLORS.primaryDark} />
-      </View>
-    </View>
+    <SafeAreaView style={styles.container}>
+      {/* <FlatList data={FLOORSCATEGORIES} renderItem={renderItem} keyExtractor={(item) => item.id.toString()} style={styles.containerList} /> */}
+    </SafeAreaView>
   );
 };
 
