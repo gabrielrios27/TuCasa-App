@@ -1,4 +1,4 @@
-import { FloorCategories, Home, ProductsDetail, WallCoveringCategories } from '../screens';
+import { FloorCategories, Home, ProductsDetail, WallCoveringCategories, FloorProducts } from '../screens';
 
 import { COLORS } from '../constants/themes/colors';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -36,6 +36,14 @@ const ShopNavigator = () => {
         })}
       />
       <Stack.Screen
+        name="ModelosPisos"
+        component={FloorProducts}
+        options={({ route }) => ({
+          title: route.params.title,
+          headerTintColor: 'white',
+        })}
+      />
+      <Stack.Screen
         name="Revestimientos"
         component={WallCoveringCategories}
         options={({ route }) => ({
@@ -47,7 +55,7 @@ const ShopNavigator = () => {
         name="Detalles"
         component={ProductsDetail}
         options={({ route }) => ({
-          title: 'Detalles',
+          title: route.params.title,
           headerTintColor: 'white',
         })}
       />

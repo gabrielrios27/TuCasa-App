@@ -7,7 +7,7 @@ import { styles } from './styles';
 
 const FloorCategories = ({ navigation, route }) => {
   const onSelected = (item) => {
-    navigation.navigate('Products', { categoryId: item.id, title: item.title, color: item.color });
+    navigation.navigate('ModelosPisos', { categoryId: item.id, title: item.title, color: item.color });
   };
   const renderItem = ({ item }) => <CategoryItem item={item} onSelected={onSelected} />;
   return (

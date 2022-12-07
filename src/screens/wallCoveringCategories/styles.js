@@ -12,7 +12,7 @@ export const styles = StyleSheet.create({
   title: {
     fontFamily: 'SourceSansPro-Black',
   },
-  btn: {
-    marginVertical: 10,
+  containerList: {
+    width: '100%',
   },
 });
