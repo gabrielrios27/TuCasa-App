@@ -1,6 +1,7 @@
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { FloorCategories, Home, ProductsDetail, WallCoveringCategories } from '../screens';
+
 import { COLORS } from '../constants/themes/colors';
-import { Home, FloorCategories, WallCoveringCategories, ProductsDetail } from '../screens';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 const Stack = createNativeStackNavigator();
 

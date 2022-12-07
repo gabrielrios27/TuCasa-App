@@ -5,6 +5,7 @@ export const COLORS = {
   secondaryDark: '#643C00',
   backgroundLight: '#FDFFFC',
   backgroundDark: '#030303',
+  backgroundTransparent: '#03030330',
   text: '#000000',
   textLight: '#212121',
   white: '#FDFFFC',

@@ -4,30 +4,35 @@ import { StyleSheet } from 'react-native';
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 10,
+    borderRadius: 10,
     marginHorizontal: 20,
     marginVertical: 10,
-    borderRadius: 10,
-    height: 120,
+    height: 160,
   },
-  item: {
+  contentContainer: {
     flex: 1,
-    justifyContent: 'space-around',
+    borderRadius: 10,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 1,
+      height: 1,
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 1.2,
+    elevation: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 10,
+  },
+  containerTitle: {
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    backgroundColor: COLORS.backgroundTransparent,
+    borderRadius: 10,
   },
   title: {
-    fontFamily: 'SourceSansPro-Regular',
-    fontSize: 16,
-  },
-  detailsContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
-  price: {
-    fontFamily: 'SourceSansPro-Bold',
     fontSize: 18,
-  },
-  size: {
-    fontFamily: 'SourceSansPro-Italic',
-    fontSize: 14,
+    fontFamily: 'SourceSansPro-Bold',
+    color: COLORS.white,
   },
 });

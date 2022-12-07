@@ -12,7 +12,7 @@ const FloorCategories = ({ navigation, route }) => {
   const renderItem = ({ item }) => <CategoryItem item={item} onSelected={onSelected} />;
   return (
     <SafeAreaView style={styles.container}>
-      {/* <FlatList data={FLOORSCATEGORIES} renderItem={renderItem} keyExtractor={(item) => item.id.toString()} style={styles.containerList} /> */}
+      <FlatList data={FLOORSCATEGORIES} renderItem={renderItem} keyExtractor={(item) => item.id.toString()} style={styles.containerList} />
     </SafeAreaView>
   );
 };
