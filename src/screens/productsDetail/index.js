@@ -1,13 +1,13 @@
 import { FLOORSPRODUCTS, WALLCOVERINGPRODUCTS } from '../../constants/data/index';
 import { Text, View } from 'react-native';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { styles } from './styles';
 
 const ProductsDetail = ({ navigation, route }) => {
-  const { productId, type } = route.params;
-
-  const filteredProducts =
-    type === 'floor' ? FLOORSPRODUCTS.find((prod) => prod.id === productId) : WALLCOVERINGPRODUCTS.find((prod) => prod.id === productId);
+  const { type } = route.params;
+  const dispatch = useDispatch();
+  const filteredProducts = useSelector((state) => state.floorProducts.selected);
 
   const { title, price, description, size } = filteredProducts || {};
   return (
