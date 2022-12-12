@@ -1,12 +1,14 @@
-import { View, Text } from 'react-native';
+import { FLOORSPRODUCTS, WALLCOVERINGPRODUCTS } from '../../constants/data/index';
+import { Text, View } from 'react-native';
+
 import { styles } from './styles';
-import { FLOORSPRODUCTS } from '../../constants/data/index';
 
 const ProductsDetail = ({ navigation, route }) => {
-  const { productId } = route.params;
+  const { productId, type } = route.params;
 
-  const filteredProducts = FLOORSPRODUCTS.find((prod) => prod.id === productId);
-  console.warn(productId);
+  const filteredProducts =
+    type === 'floor' ? FLOORSPRODUCTS.find((prod) => prod.id === productId) : WALLCOVERINGPRODUCTS.find((prod) => prod.id === productId);
+
   const { title, price, description, size } = filteredProducts || {};
   return (
     <View style={styles.container}>

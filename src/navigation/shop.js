@@ -1,4 +1,4 @@
-import { FloorCategories, Home, ProductsDetail, WallCoveringCategories, FloorProducts } from '../screens';
+import { FloorCategories, FloorProducts, Home, ProductsDetail, WallCoveringCategories, WallCoveringProducts } from '../screens';
 
 import { COLORS } from '../constants/themes/colors';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -48,6 +48,14 @@ const ShopNavigator = () => {
         component={WallCoveringCategories}
         options={({ route }) => ({
           title: 'Revestimientos',
+          headerTintColor: 'white',
+        })}
+      />
+      <Stack.Screen
+        name="ModelosRevestimientos"
+        component={WallCoveringProducts}
+        options={({ route }) => ({
+          title: route.params.title,
           headerTintColor: 'white',
         })}
       />

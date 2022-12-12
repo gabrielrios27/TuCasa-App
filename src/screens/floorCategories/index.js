@@ -1,6 +1,5 @@
 import { FlatList, SafeAreaView } from 'react-native';
 
-import { COLORS } from '../../constants/themes/colors';
 import { CategoryItem } from '../../components';
 import { FLOORSCATEGORIES } from '../../constants/data/index';
 import { styles } from './styles';
