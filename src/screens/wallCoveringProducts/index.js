@@ -1,15 +1,23 @@
+import { filterProducts, selectProduct } from '../../store/actions';
+import { useDispatch, useSelector } from 'react-redux';
+
 import { FlatList } from 'react-native';
 import { ProductItem } from '../../components';
-import { WALLCOVERINGPRODUCTS } from '../../constants/data/index';
 import { styles } from './styles';
+import { useEffect } from 'react';
 
 const WallCoveringProducts = ({ navigation, route }) => {
-  const { categoryId, title } = route.params;
+  const category = useSelector((state) => state.wallCoveringCategories.selected);
+  const filteredProducts = useSelector((state) => state.wallCoveringProducts.filteredProducts);
+  const dispatch = useDispatch();
 
-  const filteredProducts = WALLCOVERINGPRODUCTS.filter((product) => product.categoryId === categoryId);
+  useEffect(() => {
+    dispatch(filterProducts(category.id));
+  }, []);
 
   const onSelected = (item) => {
-    navigation.navigate('Detalles', { title: item.title, productId: item.id, type: 'wallCovering' });
+    dispatch(selectProduct(item.id));
+    navigation.navigate('Detalles', { title: item.title, type: 'wallCovering' });
   };
   const renderItem = ({ item }) => <ProductItem item={item} onSelected={onSelected} />;
   return <FlatList data={filteredProducts} renderItem={renderItem} keyExtractor={(item) => item.id.toString()} style={styles.container} />;

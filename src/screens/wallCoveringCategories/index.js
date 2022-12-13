@@ -11,7 +11,7 @@ const WallCoveringCategories = ({ navigation }) => {
 
   const onSelected = (item) => {
     dispatch(selectCategory(item.id));
-    navigation.navigate('ModelosRevestimientos', { categoryId: item.id, title: item.title, color: item.color });
+    navigation.navigate('ModelosRevestimientos', { title: item.title });
   };
   const renderItem = ({ item }) => <CategoryItem item={item} onSelected={onSelected} />;
 

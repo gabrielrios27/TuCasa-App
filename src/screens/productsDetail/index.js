@@ -7,7 +7,8 @@ import { styles } from './styles';
 const ProductsDetail = ({ navigation, route }) => {
   const { type } = route.params;
   const dispatch = useDispatch();
-  const filteredProducts = useSelector((state) => state.floorProducts.selected);
+
+  const filteredProducts = useSelector((state) => (type === 'floor' ? state.floorProducts.selected : state.wallCoveringProducts.selected));
 
   const { title, price, description, size } = filteredProducts || {};
   return (
